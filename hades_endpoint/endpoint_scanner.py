@@ -1,6 +1,6 @@
 """Endpoint security scanner module."""
 
-from hades_endpoint.log_utils import setup_logging
+from horizon_core.logging import get_logger
 
 
 class EndpointScanner:
@@ -8,7 +8,7 @@ class EndpointScanner:
     
     def __init__(self):
         """Initialize the endpoint scanner."""
-        self.logger = setup_logging()
+        self.logger = get_logger(__name__)
         self.results = []
     
     def run_scan(self):

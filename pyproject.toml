@@ -16,10 +16,14 @@ keywords = ["security", "endpoint", "cli"]
 dependencies = [
     "requests>=2.0",
     "pyyaml>=6.0",
+    "horizon-core @ git+https://github.com/HorizonSec/horizon-core.git@mainline",
 ]
 scripts = { "hades" = "hades_endpoint.cli:main" }
 
 [tool.hatch.version]
 path = "hades_endpoint/__init__.py"
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]

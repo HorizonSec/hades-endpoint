@@ -1,12 +1,13 @@
 """CLI entry point for HADES Endpoint Security."""
 
 import sys
-from hades_endpoint.log_utils import setup_logging
+from horizon_core.logging import setup_logging, get_logger
 
 
 def main():
     """Main entry point for the HADES CLI."""
-    logger = setup_logging()
+    setup_logging(level="INFO")
+    logger = get_logger(__name__)
     logger.info("HADES Endpoint Security CLI started")
     
     if len(sys.argv) < 2:
