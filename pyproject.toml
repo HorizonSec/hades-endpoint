@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hades-endpoint"
+version = "0.1.0"
+description = "HADES module for endpoint security testing"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "TheWinterShadow", email = "your_email@example.com" }
+]
+license = { file = "LICENSE" }
+keywords = ["security", "endpoint", "cli"]
+dependencies = [
+    "requests>=2.0",
+    "pyyaml>=6.0",
+    "horizon-core @ git+https://github.com/HorizonSec/horizon-core.git@mainline",
+]
+scripts = { "hades" = "hades_endpoint.cli:main" }
+
+[tool.hatch.version]
+path = "hades_endpoint/__init__.py"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
